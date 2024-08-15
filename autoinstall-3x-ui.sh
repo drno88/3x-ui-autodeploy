@@ -29,7 +29,8 @@ sleep 5
 #установка вебПанели 3x-ui в докер
 
 #создаем папку
-mkdir /opt/xray
+mkdir /opt/xray;
+cd /opt/xray;
 
 #загружаем конфигурацию в папку
 wget -O /opt/xray/docker-compose.yml https://raw.githubusercontent.com/drno88/xray-docker/main/3x-ui.yml;
