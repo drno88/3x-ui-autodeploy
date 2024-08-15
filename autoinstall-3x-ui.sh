@@ -32,7 +32,7 @@ sleep 5
 mkdir /opt/xray
 
 #загружаем конфигурацию в папку
-wget -O /opt/xray/docker-compose.yml https://https://raw.githubusercontent.com/drno88/xray-docker/main/3x-ui.yml;
+wget -O /opt/xray/docker-compose.yml https://raw.githubusercontent.com/drno88/xray-docker/main/3x-ui.yml;
 
 #запускаем панель
 docker-compose -f /opt/xray/docker-compose.yml up -d;
