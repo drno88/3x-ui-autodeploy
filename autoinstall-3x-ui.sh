@@ -42,4 +42,6 @@ sleep 1
 #проверяем что все запустилось
 docker ps
 
-echo "ВСЁ"
+echo -e "\e[1;32mВСЁ\e[0m"
+echo -e "\e[1;32mWebPort 2053 \e[0m"
+
