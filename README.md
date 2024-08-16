@@ -13,4 +13,4 @@
 curl -o autoinstall-3x-ui.sh https://raw.githubusercontent.com/drno88/xray-docker/main/autoinstall-3x-ui.sh && bash autoinstall-3x-ui.sh
 
 После завершения установки Панель доступна по адресу
-https://10.10.10.1:2053  -  где 10.10.10.1 IP Вашего сервера
+http://10.10.10.1:2053  -  где 10.10.10.1 IP Вашего сервера
