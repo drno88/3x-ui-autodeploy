@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Получаем внешний IP-адрес
+external_ip=$(curl -s ifconfig.me)
+
 # Обновление пакетов
 sudo apt-get update -qq && sudo apt-get install jq fail2ban mc htop vnstat wget git curl rsync certbot sshpass apt-transport-https ca-certificates software-properties-common net-tools speedtest-cli -qq -y;
 
@@ -44,5 +47,5 @@ sleep 1
 docker ps
 
 echo -e "\e[1;32mВСЁ\e[0m"
-echo -e "\e[1;32mWebPort 2053 \e[0m"
+echo -e "\e[1;32mПанель доступна по адресу https://$external_ip:2053\e[0m"
 
