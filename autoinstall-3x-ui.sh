@@ -47,7 +47,6 @@ sleep 1
 docker ps
 
 echo -e "\e[1;32mУстановка завершена\e[0m"
-echo -e "\e[1;32mПанель доступна по адресу 
-http://$external_ip:2053\e[0m"
-echo -e "\e[1;32mЛогин и пароль admin:admin\e[0m"
+echo -e "\e[1;32mПанель доступна по адресу http://$external_ip:2053\e[0m"
+echo -e "\e[1;32mЛогин и пароль от панели admin admin\e[0m"
 
