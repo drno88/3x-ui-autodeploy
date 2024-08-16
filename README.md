@@ -13,7 +13,7 @@ https://github.com/MHSanaei/3x-ui
 подключиться к серверу по ssh
 скопировать команду ниже в консоль сервера и нажать Enter. Дождаться окончания установки
 
-curl -o autoinstall-3x-ui.sh https://raw.githubusercontent.com/drno88/xray-docker/main/autoinstall-3x-ui.sh && bash autoinstall-3x-ui.sh
+```bash curl -o autoinstall-3x-ui.sh https://raw.githubusercontent.com/drno88/xray-docker/main/autoinstall-3x-ui.sh && bash autoinstall-3x-ui.sh ```
 
 После завершения установки Панель доступна по адресу
 http://10.10.10.1:2053  -  где 10.10.10.1 IP Вашего сервера
