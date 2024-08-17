@@ -1,7 +1,15 @@
 #!/bin/bash
 
+echo -e "\e[1;32mПроверка фонового процесса установки dpkg\e[0m"
+# Проверка, что установка пакетов не выполняется
+while sudo lsof /var/lib/dpkg/lock-frontend; do
+    echo "\e[1;31mНайден фоновый процесс установки, Пожалуйста, ждите...\e[0m"
+    sleep 5
+done
+echo -e "\e[1;32mФонового процесса dpkg не найдено. Начинаю установку...\e[0m"
+
 # Получаем внешний IP-адрес
-external_ip=$(curl -s ifconfig.me)
+external_ip=$(curl -s https://ipinfo.io/ip)
 
 # Обновление пакетов
 sudo apt-get update -qq && sudo apt-get reinstall jq fail2ban mc htop vnstat wget git curl apt-transport-https ca-certificates software-properties-common net-tools -qq -y;
@@ -41,7 +49,7 @@ wget -O /opt/xray/docker-compose.yml https://raw.githubusercontent.com/drno88/3x
 #запускаем панель
 docker-compose -f /opt/xray/docker-compose.yml up -d;
 
-sleep 1
+sleep 2
 
 #проверяем что все запустилось
 docker ps
