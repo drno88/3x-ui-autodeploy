@@ -11,6 +11,9 @@ echo -e "\e[1;32mФонового процесса dpkg не найдено. Н�
 # Получаем внешний IP-адрес
 external_ip=$(curl -s https://ipinfo.io/ip)
 
+# Отключаем UFW
+ufw disable
+
 # Обновление пакетов
 sudo apt-get update -qq && sudo apt-get install jq fail2ban mc htop vnstat wget git curl rsync certbot sshpass apt-transport-https ca-certificates software-properties-common net-tools -qq -y;
 
