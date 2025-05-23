@@ -14,8 +14,21 @@ external_ip=$(curl -s https://ipinfo.io/ip)
 # Отключаем UFW
 ufw disable
 
+echo net.core.default_qdisc = fq >> /etc/sysctl.conf
+echo net.ipv4.tcp_congestion_control = bbr >> /etc/sysctl.conf
+
+sysctl -p
+
+echo net.ipv4.ip_forward=1 >> /etc/sysctl.conf
+sysctl -p
+
+echo net.ipv6.conf.all.disable_ipv6=1 >> /etc/sysctl.conf
+echo net.ipv6.conf.default.disable_ipv6=1 >> /etc/sysctl.conf
+echo net.ipv6.conf.lo.disable_ipv6 = 1 >> /etc/sysctl.conf
+sysctl -p
+
 # Обновление пакетов
-sudo apt-get update -qq && sudo apt-get install jq fail2ban mc htop vnstat wget git curl rsync certbot sshpass apt-transport-https ca-certificates software-properties-common net-tools -qq -y;
+sudo apt-get update -qq && sudo apt-get install nano jq fail2ban mc htop vnstat wget git curl rsync certbot sshpass apt-transport-https ca-certificates software-properties-common net-tools -qq -y;
 
 # Добавление ключа репозитория Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
