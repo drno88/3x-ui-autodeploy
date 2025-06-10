@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Обновление пакетов
-sudo apt-get update -qq && sudo apt-get install jq fail2ban mc htop vnstat wget git curl rsync certbot sshpass apt-transport-https ca-certificates software-properties-common net-tools speedtest-cli -qq -y;
+sudo apt-get update -qq && sudo apt-get install nano jq fail2ban mc htop vnstat wget git curl rsync certbot sshpass apt-transport-https ca-certificates software-properties-common net-tools -qq -y;
 
 # Добавление ключа репозитория Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
